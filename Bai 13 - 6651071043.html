@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tạo form và các điều khiển</title>
+<style>
+body { font-family: Arial; }
+.container { width:620px; margin:20px auto; }
+h1 { text-align:center; color:#3377AA; }
+table { width:100%; border-collapse:collapse; background:#FFF9B8; }
+td { border:1px solid #999; padding:4px; color:#336699; }
+input[type=text] { width:290px; }
+#thongbao { text-align:center; color:#FF6600; font-weight:bold; }
+fieldset { width:350px; height:55px; border:2px solid #900; }
+</style>
+</head>
+<body>
+<form id="formDuLich">
+<div class="container">
+<h1>Đăng ký du lịch</h1>
+<table>
+<tr><td>Họ và tên</td><td><input type="text" id="hoTen"></td></tr>
+<tr><td>Địa chỉ</td><td><input type="text" id="diaChi"></td></tr>
+<tr><td>Điện thoại</td><td><input type="text" id="dienThoai"></td></tr>
+<tr><td>Khách Việt Nam</td><td><input type="checkbox" id="vietNam" checked></td></tr>
+<tr><td>Chọn tour</td><td>
+<select id="tour">
+<optgroup label="Miền Bắc">
+<option>Hà Nội - Hạ Long - Sapa</option>
+<option>Hà Nội - Chùa Hương - Ninh Bình</option>
+<option>Hà Nội - Cát Bà - Tuần Châu</option>
+</optgroup>
+<optgroup label="Miền Trung">
+<option>Huế - Bạch Mã - Đà Nẵng</option>
+<option>Nha Trang - Đà Lạt</option>
+<option>Buôn mê thuột - Gia lai - Kontum</option>
+</optgroup>
+<optgroup label="Miền Nam">
+<option>TP.HCM - Cần Thơ - Cà Mau</option>
+<option>TP.HCM - Mỹ Tho</option>
+</optgroup>
+</select>
+</td></tr>
+<tr><td>Phương tiện</td><td>
+<label><input type="radio" name="phuongTien" value="Máy bay"> Máy bay</label>
+<label><input type="radio" name="phuongTien" value="Xe ô tô" checked> Xe ô tô</label>
+</td></tr>
+<tr><td colspan="2" align="center">
+<fieldset>
+<legend>Số lượng đoàn khách</legend>
+Người lớn <input type="text" style="width:40px">
+Trẻ em <input type="text" style="width:40px">
+</fieldset>
+</td></tr>
+<tr><td>Ghi chú thêm</td><td>
+<textarea id="ghiChu" style="width:300px;height:55px;"></textarea>
+</td></tr>
+<tr><td colspan="2" align="center">
+<input type="button" value="Đồng ý" onclick="dangKy()">
+</td></tr>
+<tr><td colspan="2"><div id="thongbao"></div></td></tr>
+</table>
+</div>
+</form>
+<script>
+function dangKy() {
+    document.getElementById("thongbao").innerText =
+        "Bạn đã đăng ký thành công!!!";
+}
+</script>
+</body>
+</html>

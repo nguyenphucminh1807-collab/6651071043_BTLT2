@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tạo form và các điều khiển</title>
+<style>
+body { font-family: Arial; background:#fff; }
+.container { width:560px; margin:25px auto; }
+h2 { color:#336633; }
+table { width:100%; border-collapse:collapse; background:#DFF5D5; }
+td { border:1px solid #999; padding:5px; }
+input[type=text] { width:280px; }
+#thongbao { text-align:center; color:#FF3399; font-weight:bold; }
+</style>
+</head>
+<body>
+<form id="formKhuyenMai">
+<div class="container">
+<h2>Phiếu đăng ký tham gia chương trình khuyến mãi</h2>
+<table>
+<tr><td>Họ và tên</td><td><input type="text" id="hoTen"></td></tr>
+<tr><td>Địa chỉ</td><td><input type="text" id="diaChi"></td></tr>
+<tr><td>Điện thoại</td><td><input type="text" id="dienThoai"></td></tr>
+<tr><td>Phái</td><td>
+<label><input type="radio" name="phai" value="Nam"> Nam</label>
+<label><input type="radio" name="phai" value="Nữ" checked> Nữ</label>
+</td></tr>
+<tr><td>Nghề nghiệp</td><td>
+<select id="ngheNghiep">
+<option value="Giáo viên">Giáo viên</option>
+<option value="Sinh viên">Sinh viên</option>
+<option value="Kỹ sư">Kỹ sư</option>
+<option value="Nhân viên">Nhân viên</option>
+</select>
+</td></tr>
+<tr><td>Chọn sản phẩm tham gia</td><td>
+<select id="sanPham" size="4" multiple>
+<option selected>Kem đánh răng</option>
+<option>Bột giặt</option>
+<option>Dầu gội đầu</option>
+<option>Sữa tắm</option>
+</select>
+</td></tr>
+<tr><td>Số người dự đoán tham gia</td><td><input type="text" id="soNguoi"></td></tr>
+<tr><td colspan="2" align="center">
+<input type="button" value="Đồng ý" onclick="dangKy()">
+</td></tr>
+<tr><td colspan="2"><div id="thongbao"></div></td></tr>
+</table>
+</div>
+</form>
+<script>
+function dangKy() {
+    document.getElementById("thongbao").innerText =
+        "Bạn đã đăng ký thành công!!!";
+}
+</script>
+</body>
+</html>
